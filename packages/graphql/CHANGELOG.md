@@ -1,5 +1,54 @@
 # @neo4j/graphql
 
+## 4.0.0-beta.0
+
+### Major Changes
+
+-   [#3013](https://github.com/neo4j/graphql/pull/3013) [`0fb2592b4`](https://github.com/neo4j/graphql/commit/0fb2592b4271adc02f4bbbf6e467eec5f7742be1) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Remove aggregation fields for relationships to a single node (non-List relationships) - these serve no functional utility
+
+-   [#2863](https://github.com/neo4j/graphql/pull/2863) [`c9ee9e757`](https://github.com/neo4j/graphql/commit/c9ee9e757427f512950ec58aad7e30923b297a05) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Support for Neo4j database 4.3 has been dropped. Please use the current Neo4j 5 release, or the LTS 4.4 release.
+
+-   [#2996](https://github.com/neo4j/graphql/pull/2996) [`4a78e7a8d`](https://github.com/neo4j/graphql/commit/4a78e7a8d70d3ff1ebaff8ba63ce1f9e5849d8e6) Thanks [@mjfwebb](https://github.com/mjfwebb)! - Aliased properties are now automatically escaped using backticks. If you were using backticks in the `property` argument of your `@alias` directives, these should now be removed.
+
+-   [#2834](https://github.com/neo4j/graphql/pull/2834) [`8d3aff007`](https://github.com/neo4j/graphql/commit/8d3aff007c0d5428313cef23602e9a4ef5ef3792) Thanks [@a-alle](https://github.com/a-alle)! - Deprecated @node directive arguments `label` and `additionalLabels` have been removed. Please use the `labels` argument.
+
+-   [#2818](https://github.com/neo4j/graphql/pull/2818) [`93b9d806b`](https://github.com/neo4j/graphql/commit/93b9d806b12c79dae7491b901378acf9d43f1c06) Thanks [@a-alle](https://github.com/a-alle)! - Removed deprecated argument `plural` from `@node` directive. Please use the `@plural` directive instead.
+
+-   [#2922](https://github.com/neo4j/graphql/pull/2922) [`7743399d3`](https://github.com/neo4j/graphql/commit/7743399d320b26126bb6e83bcd498c1c78517a83) Thanks [@Liam-Doodson](https://github.com/Liam-Doodson)! - The `requires` argument of the `@customResolver` directive now accepts a graphql selection set. This means it is now possible to require non-scalar fields such as related types.
+
+-   [#2769](https://github.com/neo4j/graphql/pull/2769) [`e5b53a597`](https://github.com/neo4j/graphql/commit/e5b53a5976a2880e0efdecddcddcfb427015c823) Thanks [@angrykoala](https://github.com/angrykoala)! - `@cypher` directive now requires the parameter `columnName`.
+
+    This requires all cypher queries to be made with a valid alias that must be referred in this new parameter.
+
+    For Example:
+
+    **@neo4j/graphql@3**
+
+    ```
+    @cypher(statement: "MATCH (i:Item) WHERE i.public=true RETURN i.name")
+    ```
+
+    **@neo4j/graphql@4**
+
+    ```
+    @cypher(statement: "MATCH (i:Item) WHERE i.public=true RETURN i.name as result", columnName: "result")
+    ```
+
+-   [#2944](https://github.com/neo4j/graphql/pull/2944) [`8f0656b35`](https://github.com/neo4j/graphql/commit/8f0656b35b86a1d4966dea8cdb2a8ee5a3505dd6) Thanks [@Liam-Doodson](https://github.com/Liam-Doodson)! - Made `@relationshipProperties` mandatory for relationship property interfaces
+
+-   [#2819](https://github.com/neo4j/graphql/pull/2819) [`2ab3d5212`](https://github.com/neo4j/graphql/commit/2ab3d521277d66afd7acaea00aa56d44f10480bd) Thanks [@a-alle](https://github.com/a-alle)! - Removed `@computed` directive. Please use `@customResolver` instead.
+
+-   [#2598](https://github.com/neo4j/graphql/pull/2598) [`257aa4c97`](https://github.com/neo4j/graphql/commit/257aa4c97a0d367063725dff703fdd30f0f8ecb5) Thanks [@darrellwarde](https://github.com/darrellwarde)! - Remove all arguments from IExecutableSchemaDefinition apart from `typeDefs` and `resolvers`. This is to simplify the API and to remove any unexpected behaviours from arguments which we blindly pass through.
+
+-   [#2955](https://github.com/neo4j/graphql/pull/2955) [`9f3a9374e`](https://github.com/neo4j/graphql/commit/9f3a9374e5272577f2453cd3704c6924526f8b45) Thanks [@mjfwebb](https://github.com/mjfwebb)! - Relationship type strings are now automatically escaped using backticks. If you were using backticks in the `type` argument of your `@relationship` directives, these should now be removed to avoid backticks being added into your relationship type labels.
+
+### Patch Changes
+
+-   [#3010](https://github.com/neo4j/graphql/pull/3010) [`03141c81e`](https://github.com/neo4j/graphql/commit/03141c81e38e85bc6499231ae90a19e3fbdb17c3) Thanks [@happenslol](https://github.com/happenslol)! - Fix Date scalar serialization for custom resolvers
+
+-   Updated dependencies [[`084e0e036`](https://github.com/neo4j/graphql/commit/084e0e036ea05091db9082cae227b55a55157109)]:
+    -   @neo4j/cypher-builder@0.2.2-beta.0
+
 ## 3.17.1
 
 ### Patch Changes

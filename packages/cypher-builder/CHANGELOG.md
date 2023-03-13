@@ -1,5 +1,11 @@
 # @neo4j/cypher-builder
 
+## 0.2.2-beta.0
+
+### Patch Changes
+
+-   [#2984](https://github.com/neo4j/graphql/pull/2984) [`084e0e036`](https://github.com/neo4j/graphql/commit/084e0e036ea05091db9082cae227b55a55157109) Thanks [@angrykoala](https://github.com/angrykoala)! - Support for path variables over patterns
+
 ## 0.2.1
 
 ### Patch Changes
