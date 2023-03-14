@@ -1,5 +1,14 @@
 # @neo4j/graphql
 
+## 3.17.2
+
+### Patch Changes
+
+-   [#3010](https://github.com/neo4j/graphql/pull/3010) [`03141c81e`](https://github.com/neo4j/graphql/commit/03141c81e38e85bc6499231ae90a19e3fbdb17c3) Thanks [@happenslol](https://github.com/happenslol)! - Fix Date scalar serialization for custom resolvers
+
+-   Updated dependencies [[`cdbf0c1fe`](https://github.com/neo4j/graphql/commit/cdbf0c1fed34e5c39c8697410e13b338498f7520), [`084e0e036`](https://github.com/neo4j/graphql/commit/084e0e036ea05091db9082cae227b55a55157109), [`c4b9f120a`](https://github.com/neo4j/graphql/commit/c4b9f120ac2e22a6c9c1a34c920cb1ddf88fa45d)]:
+    -   @neo4j/cypher-builder@0.2.2
+
 ## 3.17.1
 
 ### Patch Changes
